@@ -1,0 +1,3 @@
+go.sum
+.idea
+test_docker/sql_test_2/db
