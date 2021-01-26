@@ -29,3 +29,13 @@ func TestTrimLeft(t *testing.T){
 	fmt.Println("=====>",d)
 	return
 }
+
+func TestASD (t *testing.T){
+	fmt.Println(strings.HasPrefix(url, "http://"))
+	fmt.Println(strings.HasPrefix(url, "https://"))
+	fmt.Println(strings.HasPrefix(url, "//"))
+	fmt.Println("=====>")
+	fmt.Println(strings.HasSuffix(url, "testDemo"))
+	fmt.Println(strings.HasSuffix(url, "test"))
+	return
+}
