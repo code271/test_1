@@ -15,8 +15,8 @@ type ClientCenter struct {
 
 // Manager define a ws server manager
 var Center = ClientCenter{
-	Register:   make(chan *Client),
-	Unregister: make(chan *Client),
+	Register:   make(chan *Client, 1000000),
+	Unregister: make(chan *Client, 1000000),
 	Clients:    make(map[string]bool),
 }
 
