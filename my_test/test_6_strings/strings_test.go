@@ -30,7 +30,9 @@ func TestTrimLeft(t *testing.T){
 	return
 }
 
-func TestASD (t *testing.T){
+// 平时用的不多，但是真的要用了现百度丢人。。。
+// 提前了解一下，增加开发效率
+func TestStringsHas (t *testing.T){
 	fmt.Println(strings.HasPrefix(url, "http://"))
 	fmt.Println(strings.HasPrefix(url, "https://"))
 	fmt.Println(strings.HasPrefix(url, "//"))
