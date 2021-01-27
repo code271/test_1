@@ -44,7 +44,10 @@ func (c *client) ListenNats(name string) (err error) {
 	fmt.Println("开始监听：", name)
 	_, err = ncConn.Subscribe(name, func(m *nats.Msg) {
 		// 在这阻塞就完了。。。。。
-		// TODO 查询这里阻塞后不能恢复的原因
+		// 查询这里阻塞后不能恢复的原因
+		// nats不提供缓冲，阻塞了会造成消息丢失，最大是100多W
+		// 解决方案：扩大管道缓冲长度，限制流量（频道发消息间隔，个人发送消息频率，好友数量）
+
 		c.CountFlat++
 		c.Count <- c.CountFlat
 		c.Send <- m.Data
