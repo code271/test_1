@@ -3,6 +3,7 @@ package v1
 import (
 	"code271/ws_test_1/pkg/server_context"
 	"code271/ws_test_1/pkg/ws"
+	service_1 "code271/ws_test_1/service/service_demo_1"
 	"fmt"
 	"net/http"
 )
@@ -31,7 +32,8 @@ func Login(c *server_context.Context) {
 		c.JSON(server_context.NewSuccess(nil))
 		return
 	}
-
+	code, data := service_1.Login(req.AccountName, req.Password)
+	c.JSON(server_context.NewError(code, data))
 	return
 }
 
@@ -44,6 +46,7 @@ func Register(c *server_context.Context) {
 		c.JSON(server_context.NewSuccess(nil))
 		return
 	}
-
+	code, data := service_1.Register(req.Mobile, req.SmsCode)
+	c.JSON(server_context.NewError(code, data))
 	return
 }

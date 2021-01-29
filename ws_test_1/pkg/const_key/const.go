@@ -1,6 +1,6 @@
 package const_key
 
-const SqlUrl = "root:code271L@(127.0.0.1:33060)/test"
+const SqlUrl = "root:asdfQWER@(127.0.0.1:3306)/test"
 
 const (
 	ChM       = "ch_m"
